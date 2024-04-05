@@ -10,11 +10,13 @@ export MDARDEN_CODE_TOP=~/repos/chat-box/
 
 if [ "$BOTH_CLEAN_BUILD" = "1" ]; then
     echo "Both clean build..."
+    rm -rf $MDARDEN_CLIENT_INSTALL_TOP
     pushd $MDARDEN_CODE_TOP/client
     mvn clean
     mvn compile
     mvn package
     popd
+    rm -rf $MDARDEN_SERVER_INSTALL_TOP
     pushd $MDARDEN_CODE_TOP/server
     mvn clean
     mvn compile
@@ -32,6 +34,7 @@ elif [ "$BOTH_REG_BUILD" = "1" ]; then
     popd
 elif [ "$SERVER_CLEAN_BUILD" = "1" ]; then
     echo "Server clean build..."
+    rm -rf $MDARDEN_SERVER_INSTALL_TOP
     pushd $MDARDEN_CODE_TOP/server
     mvn clean
     mvn compile
@@ -45,6 +48,7 @@ elif [ "$SERVER_REG_BUILD" = "1" ]; then
     popd
 elif [ "$CLIENT_CLEAN_BUILD" = "1" ]; then
     echo "Client clean build..."
+    rm -rf $MDARDEN_CLIENT_INSTALL_TOP
     pushd $MDARDEN_CODE_TOP/client
     mvn clean
     mvn compile

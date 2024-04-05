@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar $MDARDEN_INSTALL_TOP/final/server/jars/server.jar
+java -jar $MDARDEN_INSTALL_TOP/server/jars/server.jar
